@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
+import orphanageView from '../views/orphanages_view';
 import Orphanage from '../models/Orphanage';
 
 export default {
@@ -10,7 +11,7 @@ export default {
             relations: ['images'],
         });
 
-        return res.json(orphanages);
+        return res.json(orphanageView.rederMany(orphanages));
     },
 
     async show(req:Request, res:Response) {
@@ -22,7 +23,7 @@ export default {
             relations: ['images'],
         });
 
-        return res.json(orphanage);
+        return res.json(orphanageView.render(orphanage));
     },
 
     async create(req:Request, res:Response) {
