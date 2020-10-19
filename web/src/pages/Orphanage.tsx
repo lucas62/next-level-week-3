@@ -44,7 +44,6 @@ export default function Orphanage() {
     return <p>Carregando</p>
   }
 
-  console.log(orphanage.open_on_weekends)
   return (
     
     <div id="page-orphanage">

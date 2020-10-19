@@ -1,12 +1,10 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 
 import { useFonts } from 'expo-font';
 import { Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold } from '@expo-google-fonts/nunito';
 
 import Routes from './src/routes';
-
-import { AppLoading } from 'expo';
+import { View } from 'react-native';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,7 +14,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <View />;
   }
 
   return (
